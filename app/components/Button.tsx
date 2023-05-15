@@ -2,7 +2,7 @@
 
 import { IconType } from "react-icons/lib";
 
-interface BuutonProps{
+interface ButonProps{
     label: string;
     onClick: (e: ReactEvent<HTMLAnchorElement>) => void;
     disabled?:boolean;
@@ -12,7 +12,7 @@ interface BuutonProps{
 }
 
 
-const Button: React.FC<BuutonProps> = ({label, onClick, disabled, outline,small,icon:Icon}) => {
+const Button: React.FC<ButonProps> = ({label, onClick, disabled, outline,small,icon:Icon}) => {
   return (
     <button
     onClick={onClick}

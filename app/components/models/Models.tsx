@@ -19,6 +19,7 @@ interface ModalProps{
 
 const Models:React.FC<ModalProps> = ({isOpen, onClose, onSubmit, title, body, footer, actionLabel,disabled, secondaryAction, secondaryActionLabel}) => {
  const [showModal, setShowModal] = useState(isOpen);
+ 
  useEffect(()=>{
    setShowModal(isOpen);
  },[isOpen]);
@@ -30,8 +31,8 @@ const Models:React.FC<ModalProps> = ({isOpen, onClose, onSubmit, title, body, fo
     setShowModal(false);
     setTimeout(() => {
         onClose();
-    },300)
- }, [disabled, onClose]);
+      }, 300)
+ }, [onClose,disabled]);
 
  const handleSubmit = useCallback(() => {
     if(disabled){
@@ -96,6 +97,7 @@ const Models:React.FC<ModalProps> = ({isOpen, onClose, onSubmit, title, body, fo
                              onClick={handleSubmit}
                             />
                         </div>
+                        {footer}
                     </div>
                 </div>
             </div>
